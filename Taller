@@ -1,0 +1,9 @@
+def validate(inp):
+# Checks if DNA sequence is valid. Returns True is sequence is valid, or False otherwise. "
+  Inp = inp.upper()
+  valid = Inp.count("A") + Inp.count("C") + Inp.count("G") + Inp.count("T")
+  x = Inp.count("X")
+  if valid == len (Inp): print("No X found")
+  else : print ("Number of X:"), print(x)
+inp  = input ("Protein sequence:")
+validate(inp)
