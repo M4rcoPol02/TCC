@@ -24,6 +24,7 @@ def compare(input, contrast):
 
 
 
-con = input("Main sequence:    ").upper()
-inp = input("Protein sequence: ").upper()
+
+con = input("Main sequence:    ").replace(" ", "").upper()
+inp = input("Protein sequence: ").replace(" ", "").upper()
 validate(con,inp)
