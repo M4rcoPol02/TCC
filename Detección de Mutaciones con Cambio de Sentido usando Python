@@ -1,0 +1,29 @@
+def validate(input,contrast):
+# Checks if DNA sequence is valid. Returns True is sequence is valid, or False otherwise. "
+  inputValid = input.count("A") + input.count("C") + input.count("G") + input.count("T")
+  contrastValid = contrast.count("A") + contrast.count("C") + contrast.count("G") + contrast.count("T")
+  inputCharCount = len(input)
+  contrastCharCount = len(contrast)
+  if inputValid == inputCharCount and contrastValid == contrastCharCount and len(input) == len(contrast) : compare(input, contrast)
+  else: print("Invalid sequence")
+  return
+
+
+
+
+def compare(input, contrast):
+  if input == contrast : print("No mutations found")
+  else:
+   dic = {i: c for i, c in enumerate(contrast)} # Create a dictionary mapping index to character in contrast
+  count = 0
+  for b in input:
+   if b != dic[count]: print("Mutation found at index {0}. Changed {1}, for {2}".format(count + 1, b, dic[count]))
+   count += 1
+  return
+
+
+
+
+con = input("Main sequence:    ").upper()
+inp = input("Protein sequence: ").upper()
+validate(con,inp)
